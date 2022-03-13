@@ -25,6 +25,7 @@ public class HelloControllerTest {
     public void hello_returning() throws Exception{
         String hello = "hello";
 
+        
         mvc.perform(get("/hello")) // MockMvc로 /hello 주소로 HTTP Get 요청함
                 .andExpect(status().isOk()) // perform의 결과, HTTP header의 status 검증
                 .andExpect(content().string(hello)); // perform의 결과, 응답 본문의 내용 검증(Controller에서 hello 리턴하기 때문에 맞는지 검증함)
